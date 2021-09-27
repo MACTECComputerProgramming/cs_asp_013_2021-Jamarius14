@@ -1,0 +1,61 @@
+private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Six Inch
+            
+            
+            if (SixInchButton.IsChecked == true)
+            {
+                double total = 3.50;
+                
+                //Bread
+                if (WheatButton.IsChecked == true)
+                {
+                    ResultLabel.Content = "Six Inch," + "Wheat," + total;
+                }
+
+                if (ItalianButton.IsChecked == true)
+                {
+                    ResultLabel.Content = "Six Inch," + "Italian," + total;
+                }
+
+                if (FlatbreadButton.IsChecked == true)
+                {
+                    ResultLabel.Content = "Six Inch," + "Flatbread," + "$" + (total + .50);
+                }
+
+                //Meat
+
+                
+                if (HamButton.IsChecked == true)
+                {
+                    ResultLabel.Content = "Six Inch," + "Wheat," +"Ham,"+"$" + total;
+                }
+
+                if (RoatedChickenButton.IsChecked == true)
+                {
+                    ResultLabel.Content = "Six Inch," + "Italian," + "Roasted Chicken,"+ "$" + total;
+                }
+
+                if (FlatbreadButton.IsChecked == true)
+                {
+                    ResultLabel.Content = "Six Inch," + "Flatbread," + "$" + (total + .50);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+            }
+            
+          
+
+        }
+    }
+}
