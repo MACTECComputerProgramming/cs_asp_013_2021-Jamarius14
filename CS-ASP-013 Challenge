@@ -1,61 +1,169 @@
-private void OrderButton_Click(object sender, RoutedEventArgs e)
+ public partial class MainWindow : Window
+    {
+        public MainWindow()
         {
-            //Six Inch
-            
-            
-            if (SixInchButton.IsChecked == true)
+            InitializeComponent();
+        }
+
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            double total = 3.50;
+            string subBread = " ";
+            string subSize = "";
+            string subMeat = "";
+            string subCheese = " ";
+            string subCheese1 = " ";
+            string subCheese2 = " ";
+            string subVeggie = " ";
+            string subVeggie1 = " ";
+            string subVeggie2 = " ";
+            string subVeggie3 = " ";
+
+            //size
+
+            if (FootlongButton.IsChecked == true )
             {
-                double total = 3.50;
-                
-                //Bread
-                if (WheatButton.IsChecked == true)
-                {
-                    ResultLabel.Content = "Six Inch," + "Wheat," + total;
-                }
+                subSize = "Foot Long,";
 
-                if (ItalianButton.IsChecked == true)
-                {
-                    ResultLabel.Content = "Six Inch," + "Italian," + total;
-                }
+                total = 5.00;
+            }
 
-                if (FlatbreadButton.IsChecked == true)
-                {
-                    ResultLabel.Content = "Six Inch," + "Flatbread," + "$" + (total + .50);
-                }
+            if (SixInchButton.IsChecked == true)
+            {  
+                subSize = "Six Inch,";
+            }
 
-                //Meat
+
+            //bread
+            ResultLabel.Content = subBread;
+            
+            if (WheatButton.IsChecked == true)
+            {
+                subBread = "Wheat,";
 
                 
-                if (HamButton.IsChecked == true)
-                {
-                    ResultLabel.Content = "Six Inch," + "Wheat," +"Ham,"+"$" + total;
-                }
-
-                if (RoatedChickenButton.IsChecked == true)
-                {
-                    ResultLabel.Content = "Six Inch," + "Italian," + "Roasted Chicken,"+ "$" + total;
-                }
-
-                if (FlatbreadButton.IsChecked == true)
-                {
-                    ResultLabel.Content = "Six Inch," + "Flatbread," + "$" + (total + .50);
-                }
-
-
-
-
-
-
-
-
-
-
-
-
+                
             }
             
-          
+            if (ItalianButton.IsChecked == true)
+            {
+                subBread = "Italian,";
 
-        }
+                
+            }
+            
+            if (FlatbreadButton.IsChecked == true)
+
+            {
+                subBread = "Flat Bread,";
+
+                total = (total + .50);
+            }
+          
+            
+            
+            
+            
+            
+            
+            //meat
+            if (HamButton.IsChecked == true)
+            {
+                subMeat = "Ham,";
+             }
+
+            if (RoatedChickenButton.IsChecked == true)
+            {
+                subMeat = "Roast Chicken,";
+            }
+
+            if (MeatballButton.IsChecked == true)
+            {
+                subMeat = "Meatball,";
+
+                total = (total + 1.00);
+            }
+
+            if (SteakButton.IsChecked == true)
+            {
+                subMeat = "Steak,";
+            }
+            
+            
+            
+            //Cheese
+            if (AmericanCheckBox.IsChecked == true)
+            {
+                subCheese = "American,";
+
+                total = (total + .25);
+            }
+           
+
+            if (SwissCheckBox.IsChecked == true)
+            {
+                subCheese1 = "Swiss,";
+
+                total = (total + .30);
+            }
+
+            if (PepperjackCheckBox.IsChecked == true)
+            {
+                subCheese2 = "Pepper Jack,";
+
+                total = (total + .75);
+            }
+
+
+            //Veggies
+
+            if (CucumberCheckBox.IsChecked == true)
+            {
+                subVeggie = "Cucumber,";
+            
+            }
+
+            if (GreenPepperCheckBox.IsChecked == true)
+            {
+                subVeggie1 = "Green Pepper,";
+
+                total = (total + .15);
+            }
+            if (LettuceCheckBox.IsChecked == true)
+            {
+                subVeggie2 = "Lettuce,";
+
+                total = (total + .25);
+            }
+
+            if (RedOnionCheckBox.IsChecked == true)
+            {
+                subVeggie3 = "Red Onion,";
+
+                total = (total + .10);
+            }
+
+            //Special
+
+            if (WheatButton.IsChecked == MeatballButton.IsChecked == AmericanCheckBox.IsChecked == FootlongButton.IsChecked == true  )
+            {
+                total = (total - 2.00);
+            }
+            
+
+
+            //Result
+            ResultLabel.Content = subSize + subBread + subMeat + subCheese  +subCheese1 + subCheese2 + subVeggie + subVeggie1 + subVeggie2 + subVeggie3 + "$" + total;
+
+
+       }
     }
 }
+
+
+
+
+
+
+
+
